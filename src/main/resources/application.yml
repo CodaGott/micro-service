@@ -35,7 +35,7 @@ management:
 
 hystrix:
   command:
-    default:
+    fallbackcmd:
       excution:
         isolation:
           thread:
