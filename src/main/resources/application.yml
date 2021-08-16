@@ -26,13 +26,6 @@ spring:
                 name: DEPARTMENT-SERVICE
                 fallbackuri: forward:/departmentServiceFailBack
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: hystrix.stream
-
-
 hystrix:
   command:
     fallbackcmd:
@@ -41,11 +34,19 @@ hystrix:
           thread:
             timeoutInMilliseconds: 4000
 
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    hostname: localhost
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#  instance:
+#    hostname: localhost
